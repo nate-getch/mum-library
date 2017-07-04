@@ -15,9 +15,10 @@ public class MemberController {
 	@FXML Button btnAddMemberMenu;
 	@FXML Button btnEditMemberMenu;
 	@FXML Button btnGoback;
-	@FXML Button btnGoMemberSearch;
 	@FXML Button btnEditMember;
 	@FXML Button btnRemoveMember;
+	@FXML TextField txtSearchField;
+	@FXML Button btnSearchSubmit;
 	
 	@FXML void addMemberClick(ActionEvent e) {
 		
@@ -44,4 +45,16 @@ public class MemberController {
 		btnAddMemberMenu.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/ManageMemberMenu.fxml", "Manage Member");
 	}
+	
+	@FXML void btnMemberSearchClick(ActionEvent e) {
+		LibraryMember l = new LibraryMember().getMember(txtSearchField.getText());
+		if(l == null) {
+			System.out.println("Not FOund");
+		}
+		else {
+			txtSearchField.getScene().getWindow().hide();
+			new WindowController().openWindow("/ui/MemberEdit.fxml", "Edit Member");
+		}
+	}
+	
 }

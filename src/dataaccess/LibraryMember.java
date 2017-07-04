@@ -13,6 +13,10 @@ public class LibraryMember implements Serializable {
 	private String lastName;
 	private String phone;
 	
+	public LibraryMember() {
+		
+	}
+	
 	public LibraryMember(String txtMemberId,String txtFirstName,String txtLastName, String txtPhone){
 		this.memberId = txtMemberId;
 		this.firstName = txtFirstName;
@@ -35,11 +39,22 @@ public class LibraryMember implements Serializable {
 		return ll;
 	}
 	
+	public LibraryMember getMember(String mid){
+		//getMemberList();
+		List<LibraryMember> ll =  new ioStream().read("LibraryMember.txt");
+		for (LibraryMember l : ll) {			
+				if(l.memberId.equals(mid)) {
+					return l;
+				}	
+			}
+		return null;
+	}
+	
 	public void removeMember(String mid){
 		List<LibraryMember> ll =  new ioStream().read("LibraryMember.txt");
 		List<LibraryMember> list = new ArrayList<LibraryMember>(); ;
 		for (LibraryMember l : ll) {
-				if(l.memberId != mid)
+				if(!l.memberId.equals(mid))
 					list.add(l);
 			}
 		new ioStream().write(list, "LibraryMember.txt", 0); 
