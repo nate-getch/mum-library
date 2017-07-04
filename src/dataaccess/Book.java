@@ -14,6 +14,11 @@ public class Book implements Serializable {
 	private String title;
 	private String checkoutmaxvalue;
 	
+	public Book()
+	{
+		
+	}
+	
 	public Book(String txtISBN, String txtTitle, String txtcheckoutmaxvalue)
 	{
 		this.ISBN = txtISBN;
@@ -24,11 +29,11 @@ public class Book implements Serializable {
 	public void addBook () {
 		List<Book> x = new ArrayList <Book> ();
 		x.add(this);
-		new ioStream().write(x, "Books.txt",1);
+		new ioStream().write(x, "Book.txt",1);
 	}
 	
 	public List<Book> getBookList(){
-		List<Book> bookList =  new ioStream().read("Books.txt");
+		List<Book> bookList =  new ioStream().read("Book.txt");
 		for (Book b : bookList) 
 		{			
 				System.out.println(b);
@@ -37,6 +42,16 @@ public class Book implements Serializable {
 		return bookList;
 	}
 	
+	public Book getBook(String bookISBN)
+	{
+		List<Book> bookList =  new ioStream().read("Book.txt");
+		for (Book b : bookList) {
+		System.out.println(b);
+				if(b.ISBN.equals(bookISBN))
+					return b;
+			}
+		return null;
+	}
 	
 	public String toString() {
 		return "Book ID:" + ISBN;
