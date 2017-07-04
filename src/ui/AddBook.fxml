@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.BookController">
+   <children>
+      <Label layoutX="149.0" layoutY="85.0" text="ISBN" />
+      <TextField fx:id="txtISBN" layoutX="197.0" layoutY="81.0" />
+      <Label layoutX="149.0" layoutY="55.0" text="Add Book" />
+      <Label layoutX="149.0" layoutY="118.0" text="Title" />
+      <TextField fx:id="txtTitle" layoutX="197.0" layoutY="114.0" />
+      <TextField layoutX="197.0" layoutY="149.0" />
+      <Label layoutX="149.0" layoutY="153.0" text="Authors" />
+      <TextField fx:id="txtcheckoutmaxvalue" layoutX="197.0" layoutY="188.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="192.0" text="Maximum Checkout Length" />
+      <TextField layoutX="197.0" layoutY="225.0" />
+      <Label layoutX="92.0" layoutY="229.0" text="Number Of Copies" />
+      <Button fx:id="btnAddBook" layoutX="244.0" layoutY="284.0" mnemonicParsing="false" onAction="#addBookClick" text="Submit" />
+   </children>
+</Pane>
