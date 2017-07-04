@@ -13,8 +13,9 @@ public class DashboardController {
 	
 	@FXML void manageMemberBtnClick(ActionEvent e) {
 		//User u = new User();
+		//System.out.println(User.getRole());
 		btnManageMember.getScene().getWindow().hide();
-		new WindowController().openWindow("/ui/AddMember.fxml", "Manage Member");
+		new WindowController().openWindow("/ui/ManageMemberMenu.fxml", "Manage Member");
 	}
 	
 }

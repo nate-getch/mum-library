@@ -44,7 +44,7 @@ public class User  implements Serializable{
 		User user = new User("natnael", "123456", role.ADMIN);
 		List<User> x = new ArrayList <User> ();
 		x.add(user);
-		new ioStream().write(x, "User.txt");
+		new ioStream().write(x, "User.txt", 1);
 	}
 	
 	@Override

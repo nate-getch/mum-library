@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="ui.MemberController">
+   <children>
+      <Pane layoutX="-13.0" layoutY="-16.0" prefHeight="321.0" prefWidth="401.0">
+         <children>
+            <Button fx:id="btnAddMemberMenu" layoutX="165.0" layoutY="121.0" mnemonicParsing="false" onAction="#btnAddMemberMenuClick" prefHeight="25.0" prefWidth="59.0" text="Add" />
+            <Button fx:id="btnEditMemberMenu" layoutX="165.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnEditMemberMenuClick" prefHeight="25.0" prefWidth="59.0" text="Edit" />
+            <Button fx:id="btnRemoveMemberMenu" layoutX="166.0" layoutY="198.0" mnemonicParsing="false" onAction="#btnRemoveMemberMenuClick" text="Remove" />
+            <Button fx:id="btnGoback" layoutX="165.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnGobackClick" text="Go Back" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

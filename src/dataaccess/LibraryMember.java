@@ -23,17 +23,26 @@ public class LibraryMember implements Serializable {
 	public void addLibraryMember(  ) {
 		List<LibraryMember> x = new ArrayList <LibraryMember> ();
 		x.add(this);
-		new ioStream().write(x, "LibraryMember.txt");
+		new ioStream().write(x, "LibraryMember.txt",1);
 	}
 	
 	public List<LibraryMember> getMemberList(){
 		List<LibraryMember> ll =  new ioStream().read("LibraryMember.txt");
-		//User userInfo = null;
 		for (LibraryMember l : ll) {			
 				System.out.println(l);
 			}
 		
 		return ll;
+	}
+	
+	public void removeMember(String mid){
+		List<LibraryMember> ll =  new ioStream().read("LibraryMember.txt");
+		List<LibraryMember> list = new ArrayList<LibraryMember>(); ;
+		for (LibraryMember l : ll) {
+				if(l.memberId != mid)
+					list.add(l);
+			}
+		new ioStream().write(list, "LibraryMember.txt", 0); 
 	}
 	
 	public String toString() {

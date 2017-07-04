@@ -16,7 +16,6 @@ public class LoginController {
 		
 		u = u.login(userName.getText(), password.getText());
 		if(u.equals(null)) {
-			//u.CreateUser();
 			loginStatus.setText("Invalid Login info");
 		}
 		else {
