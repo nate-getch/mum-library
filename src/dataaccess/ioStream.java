@@ -14,8 +14,10 @@ public class ioStream {
 
 	public <T> Boolean write(List<T> list, String fileName) {
 		try {
+			list.addAll(read(fileName));
 			FileOutputStream fileOutputStream = new FileOutputStream(this.OUTPUT_DIR + fileName);
 			ObjectOutputStream output = new ObjectOutputStream(fileOutputStream);
+			// first read from the file
 			output.writeObject(list);
 			output.close();
 			return true;

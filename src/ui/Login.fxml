@@ -15,6 +15,7 @@
             <Label layoutX="16.0" layoutY="111.0" text="Password" />
             <TextField fx:id="userName" layoutX="85.0" layoutY="66.0" />
             <TextField fx:id="password" layoutX="85.0" layoutY="107.0" />
+            <Label fx:id="loginStatus" layoutX="71.0" layoutY="182.0" />
          </children>
       </Pane>
    </children>
