@@ -42,8 +42,13 @@ public class User  implements Serializable{
 	
 	public void CreateUser() {
 		User user = new User("natnael", "123456", role.ADMIN);
-		List<User> x = new ArrayList <User> ();
+		User user1 = new User("atul", "1234", role.LIBRARIAN);
+		User user2 = new User("ashish","1234", role.BOTH);
+	//	User User3 = new User("Ghana","1234", role.BOTH);
+		List<User> x = new ArrayList<User>();
 		x.add(user);
+		x.add(user1);
+		x.add(user2);
 		new ioStream().write(x, "User.txt");
 	}
 	

@@ -10,13 +10,12 @@ public class LoginController {
 	@FXML private TextField userName;
 	@FXML private TextField password;
 	@FXML private Label loginStatus;
-	
+	 
 	@FXML void loginBtnClick(ActionEvent e) {
 		User u = new User();
-		
 		u = u.login(userName.getText(), password.getText());
 		if(u.equals(null)) {
-			//u.CreateUser();
+			
 			loginStatus.setText("Invalid Login info");
 		}
 		else {
