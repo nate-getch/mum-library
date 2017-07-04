@@ -19,4 +19,17 @@ public class BookController
 		b.addBook();
 		b.getBookList();
 	}
+	
+	@FXML void btnBookSearchClick(ActionEvent e) {
+		Book b = new Book().getBook(txtISBN.getText());
+		if(b == null) {
+			System.out.println("Not Found");
+			//b.getBookList();
+		}
+		else {
+			System.out.println("Found");
+			//txtISBN.getScene().getWindow().hide();
+			//new WindowController().openWindow("/ui/MemberEdit.fxml", "Edit Member");
+		}
+	}
 }
