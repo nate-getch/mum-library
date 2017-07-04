@@ -60,8 +60,29 @@ public class LibraryMember implements Serializable {
 		new ioStream().write(list, "LibraryMember.txt", 0); 
 	}
 	
+	public void editMember(String txtMemberId,String txtFirstName,String txtLastName, String txtPhone) {
+		removeMember(txtMemberId);
+		new LibraryMember(txtMemberId,txtFirstName,txtLastName, txtPhone).addLibraryMember();
+	}
+	
 	public String toString() {
 		return "Member ID:" + memberId;
+	}
+
+	public String getMemberId() {
+		return memberId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getPhone() {
+		return phone;
 	}
 	
 }

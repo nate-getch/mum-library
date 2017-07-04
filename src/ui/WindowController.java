@@ -2,6 +2,7 @@ package ui;
 
 import business.User;
 import business.UserRole;
+import dataaccess.LibraryMember;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -60,7 +61,6 @@ public class WindowController {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-
 		}
 	}
 }
