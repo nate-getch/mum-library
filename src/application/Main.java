@@ -6,16 +6,16 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-import ui.Forms;
+import ui.*;
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			//BorderPane root = new BorderPane();
-			Parent root = FXMLLoader.load(getClass().getResource(Forms.LOGIN));
+			Parent root = FXMLLoader.load(getClass().getResource("/ui/Login.fxml"));
 			Scene scene = new Scene(root,400,400);
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/ui/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Library Management System");
 			primaryStage.show();
