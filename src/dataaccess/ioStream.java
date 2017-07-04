@@ -12,9 +12,12 @@ import java.util.*;
 public class ioStream {
 	public static String OUTPUT_DIR = System.getProperty("user.dir") + "\\src\\dataaccess\\storage\\";
 
-	public <T> Boolean write(List<T> list, String fileName) {
+	public <T> Boolean write(List<T> list, String fileName, int flag) {
 		try {
-			list.addAll(read(fileName));
+			// 0 flag removes the previous data written on the file
+			if(flag==1)
+				list.addAll(read(fileName));
+			
 			FileOutputStream fileOutputStream = new FileOutputStream(this.OUTPUT_DIR + fileName);
 			ObjectOutputStream output = new ObjectOutputStream(fileOutputStream);
 			// first read from the file

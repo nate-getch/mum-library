@@ -24,7 +24,7 @@ public class Book implements Serializable {
 	public void addBook () {
 		List<Book> x = new ArrayList <Book> ();
 		x.add(this);
-		new ioStream().write(x, "Books.txt");
+		new ioStream().write(x, "Books.txt",1);
 	}
 	
 	public List<Book> getBookList(){
