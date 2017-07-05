@@ -89,13 +89,13 @@ public class BookCopy implements Serializable {
 		return bookList;
 	}
 	
-	
+	/*
 	public static void main(String[] args) {
 		BookCopy b = new BookCopy();
 		//b.generateBookCopy();
 		b.getBookCopyRecordList();
 		//b.removeBookCopy("002");
 		//b.getBookCopyRecordList();
-	}
+	} */
 
 }

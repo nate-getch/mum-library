@@ -34,11 +34,13 @@ public class Book implements Serializable {
 	public void addBook () {
 		List<Book> x = new ArrayList <Book> ();
 		x.add(this);
-		new ioStream().write(x, "Book.txt",1);
-		// every book added has at least one copy
-		for (int i=1; i<=noOfCopies; i++) {
-			bookCopy = new BookCopy(Integer.toString(i), this.getISBN(), false);
-			bookCopy.addBookCopy();
+		if(getBook(this.ISBN) == null) {
+			new ioStream().write(x, "Book.txt",1);
+			// every book added has at least one copy
+			for (int i=1; i<=noOfCopies; i++) {
+				bookCopy = new BookCopy(Integer.toString(i), this.getISBN(), false);
+				bookCopy.addBookCopy();
+			}
 		}
 	}
 	
@@ -46,7 +48,7 @@ public class Book implements Serializable {
 		List<Book> bookList =  new ioStream().read("Book.txt");
 		for (Book b : bookList) 
 		{			
-			//System.out.println(b);
+			System.out.println(b);
 		}
 		
 		return bookList;
@@ -84,6 +86,11 @@ public class Book implements Serializable {
 		return "Book ID:" + ISBN + " , Book Title: "+title + " , Book Check Out Value : "+
 				checkoutmaxvalue + " , No Of Copies : "+noOfCopies;
 	}
-	
+	/*
+	public static void main(String[] args) {
+		Book b = new Book();
+		b.getBookList();
+	}
+	*/
 	
 }

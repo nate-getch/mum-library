@@ -35,6 +35,7 @@ public class BookSearchController
 	@FXML TextField txtISBN1;
 	@FXML TextField txtcopyNumber;
 	private boolean isCopy = false;
+	@FXML Label lblAddFormStatus;
 
 	
 	@FXML void addBookClick(ActionEvent e) throws InvocationTargetException 
@@ -48,6 +49,7 @@ public class BookSearchController
 		else {	
 			b = new Book(txtISBN.getText(), txtTitle.getText(), txtcheckoutmaxvalue.getText(), Integer.parseInt(txtNoofCopies.getText()));		
 			b.addBook();
+			lblAddFormStatus.setText("Book Added Successfully");
 		}
 		}catch(Exception e1){ e1.printStackTrace(); }
 	}
