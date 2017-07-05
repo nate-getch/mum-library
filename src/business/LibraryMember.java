@@ -109,4 +109,10 @@ public class LibraryMember implements Serializable {
 		return zip;
 	}
 	
+	/*
+	public static void main(String[] args) {
+		LibraryMember b = new LibraryMember();
+		b.getMemberList();
+	}*/
+	
 }
