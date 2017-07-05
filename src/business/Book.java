@@ -14,18 +14,20 @@ public class Book implements Serializable {
 	private String ISBN;
 	private String title;
 	private String checkoutmaxvalue;
-	private List<BookCopy> bookCopy;
-	//private BookCopy bookCopy = new BookCopy();
+	//private List<BookCopy> bookCopy;
+	private BookCopy bookCopy;
+	private int noOfCopies;
 	
 	public Book()
 	{
 		
 	}
 	
-	public Book(String txtISBN, String txtTitle, String txtcheckoutmaxvalue)
+	public Book(String txtISBN, String txtTitle, String txtcheckoutmaxvalue, int noOfCopies)
 	{
 		this.ISBN = txtISBN;
 		this.title = txtTitle;
+		this.noOfCopies = noOfCopies;
 		this.checkoutmaxvalue = txtcheckoutmaxvalue;
 	}
 	
@@ -34,7 +36,10 @@ public class Book implements Serializable {
 		x.add(this);
 		new ioStream().write(x, "Book.txt",1);
 		// every book added has at least one copy
-		new BookCopy("1", this.getISBN(), false).addBookCopy();
+		for (int i=1; i<=noOfCopies; i++) {
+			bookCopy = new BookCopy(Integer.toString(i), this.getISBN(), false);
+			bookCopy.addBookCopy();
+		}
 	}
 	
 	public List<Book> getBookList(){
@@ -58,10 +63,6 @@ public class Book implements Serializable {
 		return null;
 	}
 	
-	public String toString() {
-		return "Book ID:" + ISBN;
-	}
-
 	public String getISBN() {
 		return ISBN;
 	}
@@ -72,6 +73,16 @@ public class Book implements Serializable {
 
 	public String getCheckoutmaxvalue() {
 		return checkoutmaxvalue;
+	}
+	
+	public int getNoOfCopies()
+	{
+		return noOfCopies;
+	}
+	
+	public String toString() {
+		return "Book ID:" + ISBN + " , Book Title: "+title + " , Book Check Out Value : "+
+				checkoutmaxvalue + " , No Of Copies : "+noOfCopies;
 	}
 	
 	
