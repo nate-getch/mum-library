@@ -50,10 +50,10 @@ public CheckOutRecord(String s) {
 		return bookList;
 	}
 	
-	/*
+	
 	public static void main(String[] args) {
 		CheckOutRecord b = new CheckOutRecord();
 		b.getCheckoutRecordList();
-	}*/
+	}
 	
 }

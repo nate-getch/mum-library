@@ -45,17 +45,10 @@ public class WindowController {
 					root.lookup("#btnCheckoutBook").setDisable(true);					
 				} else if (role.equals("LIBRARIAN")) {
 					root.lookup("#btnManageMember").setDisable(true);
-				//	root.lookup("#btnEditMember").setDisable(true);
 					root.lookup("#btnAddBook").setDisable(true);
-				//	root.lookup("#btnAddBookCopy").setDisable(true);
-				//	root.lookup("#btnCheckoutBook").setDisable(false);
 				}
 				else if (role.equals("BOTH")) {
-				/*	root.lookup("#btnAddMember").setDisable(false);
-					root.lookup("#btnEditMember").setDisable(false);
-					root.lookup("#btnAddBook").setDisable(false);
-					root.lookup("#btnAddBookCopy").setDisable(false);
-					root.lookup("#btnCheckoutBook").setDisable(false); */
+				
 				}
 			}
 

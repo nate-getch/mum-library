@@ -30,7 +30,9 @@ public class CheckoutController {
 	Button btncheckout;
 	@FXML
 	Label lblcheckoutStatus;
-	//@FXML TableView<CheckOutRecord> tView;
+	@FXML 
+	Button btnGoBack;
+
 
 	@FXML
 	void checkoutBtnClick(ActionEvent e) {
@@ -47,7 +49,7 @@ public class CheckoutController {
 		if (l != null && b != null && lblcheckoutStatus.getText() == "") {
 			BookCopy bookCopy = new BookCopy().getBookCopy(txtISBN.getText());
 			if( bookCopy == null){
-				lblcheckoutStatus.setText("Book Not Available");
+				lblcheckoutStatus.setText("Book Not Available for CheckOut");
 			}
 			else {
 				//add to check out record
@@ -59,20 +61,10 @@ public class CheckoutController {
 		}
 
 	}
-/*	public void openWindow(String s1,String title) {
-		try {
-        Parent root;
-        root = FXMLLoader.load(getClass().getResource(s1));
-     //   Scene scene = new Scene(root);
-     //   Stage stage = new Stage();
-     //   stage.setTitle(title);
-     //   stage.setScene(scene);
-        CheckOutRecord cr = new CheckOutRecord();
-        List<CheckOutRecord> crlist = new ArrayList<CheckOutRecord>();
-        tView.getItems().addAll(crlist);
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-    }*/
+
+	@FXML void btnMenuGoBackClick(ActionEvent e) {
+		btnGoBack.getScene().getWindow().hide();
+		new WindowController().openWindow("/ui/Dashboard.fxml", "DashBoard", "");
+	}
+
 }

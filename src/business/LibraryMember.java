@@ -36,7 +36,10 @@ public class LibraryMember implements Serializable {
 	public void addLibraryMember(  ) {
 		List<LibraryMember> x = new ArrayList <LibraryMember> ();
 		x.add(this);
-		new ioStream().write(x, "LibraryMember.txt",1);
+		if(getMember(this.memberId) == null)
+			new ioStream().write(x, "LibraryMember.txt",1);
+		else
+			System.out.println("Member ID already exists");
 	}
 	
 	public List<LibraryMember> getMemberList(){
