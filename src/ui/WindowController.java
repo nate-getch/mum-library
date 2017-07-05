@@ -1,5 +1,6 @@
 package ui;
 
+import business.CheckOutRecord;
 import business.LibraryMember;
 import business.User;
 import business.UserRole;
@@ -7,6 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import business.CheckOutRecord;
+import java.util.*;
 
 public class WindowController {
 	public WindowController() {
@@ -20,7 +24,6 @@ public class WindowController {
 			stage.setTitle(title);
 			stage.setResizable(false);
 			stage.setScene(new Scene(root));
-
 			stage.show();
 
 		} catch (Exception e) {
@@ -62,4 +65,7 @@ public class WindowController {
 			e.printStackTrace();
 		}
 	}
+
+
+
 }

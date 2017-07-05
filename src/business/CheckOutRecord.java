@@ -20,6 +20,9 @@ public class CheckOutRecord implements Serializable {
 	public CheckOutRecord() {
 		
 	}
+public CheckOutRecord(String s) {
+		
+	}
 	
 	public CheckOutRecord(String UserId,String ISBN, String copyNumber, String checkoutmaxvalue ){
 		this.UserId = UserId;
@@ -41,7 +44,7 @@ public class CheckOutRecord implements Serializable {
 		List<CheckOutRecord> bookList =  new ioStream().read("CheckOutRecord.txt");
 		for (CheckOutRecord b : bookList) 
 		{			
-			System.out.println(b.ISBN+ " " + b.UserId);
+			//System.out.println(b.ISBN+ " " + b.UserId);
 		}
 		
 		return bookList;
