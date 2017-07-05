@@ -14,6 +14,7 @@ public class Book implements Serializable {
 	private String ISBN;
 	private String title;
 	private String checkoutmaxvalue;
+	private List<BookCopy> bookCopy;
 	//private BookCopy bookCopy = new BookCopy();
 	
 	public Book()

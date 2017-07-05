@@ -9,7 +9,7 @@ import dataaccess.ioStream;
 public class BookCopy implements Serializable {
 	private static final long serialVersionUID = 8309080721495266420L;
 	private String UniqueCopynum;
-	private Book book = new Book();
+	private Book book;
 	private String ISBN;
 	private boolean isCheckedOut;
 
