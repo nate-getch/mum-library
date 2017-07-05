@@ -46,24 +46,24 @@ public class BookCopy implements Serializable {
 		List<BookCopy> bookCopyList = new ioStream().read("BookCopy.txt");
 		for (BookCopy b : bookCopyList) {
 			//System.out.println(b);
-			if (b.ISBN.equals(bookISBN) && b.isCheckedOut == false)
+			if (b.ISBN.equals(bookISBN) && b.isCheckedOut == false )
 				return b;
 		}
 		return null;
 	}
 	
-	public void removeBookCopy(String bid){
+	public void removeBookCopy(String bid, String UniqueCopynum){
 		List<BookCopy> ll =  new ioStream().read("BookCopy.txt");
 		List<BookCopy> list = new ArrayList<BookCopy>(); ;
 		for (BookCopy l : ll) {
-				if(!l.ISBN.equals(bid))
+				if(!l.ISBN.equals(bid) && !l.UniqueCopynum.equals(UniqueCopynum))
 					list.add(l);
 			}
 		new ioStream().write(list, "BookCopy.txt", 0);
 	}
 	
 	public void editBookCopy(String UniqueCopynum, String ISBN) {
-		removeBookCopy(ISBN);
+		removeBookCopy(ISBN,UniqueCopynum);
 		new BookCopy(UniqueCopynum,ISBN, true).addBookCopy();
 	}
 
@@ -89,13 +89,13 @@ public class BookCopy implements Serializable {
 		return bookList;
 	}
 	
-	/*
+	
 	public static void main(String[] args) {
 		BookCopy b = new BookCopy();
 		//b.generateBookCopy();
 		b.getBookCopyRecordList();
 		//b.removeBookCopy("002");
 		//b.getBookCopyRecordList();
-	} */
+	} 
 
 }

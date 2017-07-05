@@ -86,11 +86,11 @@ public class Book implements Serializable {
 		return "Book ID:" + ISBN + " , Book Title: "+title + " , Book Check Out Value : "+
 				checkoutmaxvalue + " , No Of Copies : "+noOfCopies;
 	}
-	/*
+	
 	public static void main(String[] args) {
 		Book b = new Book();
 		b.getBookList();
 	}
-	*/
+	
 	
 }

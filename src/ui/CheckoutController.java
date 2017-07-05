@@ -21,6 +21,8 @@ public class CheckoutController {
 	Button btncheckout;
 	@FXML
 	Label lblcheckoutStatus;
+	@FXML 
+	Button btnGoBack;
 
 	@FXML
 	void checkoutBtnClick(ActionEvent e) {
@@ -36,7 +38,7 @@ public class CheckoutController {
 		if (l != null && b != null && lblcheckoutStatus.getText() == "") {
 			BookCopy bookCopy = new BookCopy().getBookCopy(txtISBN.getText());
 			if( bookCopy == null){
-				lblcheckoutStatus.setText("Book Not Available");
+				lblcheckoutStatus.setText("Book Not Available for CheckOut");
 			}
 			else {
 				//add to check out record
@@ -46,5 +48,10 @@ public class CheckoutController {
 			}
 		}
 
+	}
+	
+	@FXML void btnMenuGoBackClick(ActionEvent e) {
+		btnGoBack.getScene().getWindow().hide();
+		new WindowController().openWindow("/ui/Dashboard.fxml", "DashBoard", "");
 	}
 }

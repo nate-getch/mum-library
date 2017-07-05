@@ -13,7 +13,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import business.Book;
@@ -36,6 +38,9 @@ public class BookSearchController
 	@FXML TextField txtcopyNumber;
 	private boolean isCopy = false;
 	@FXML Label lblAddFormStatus;
+	@FXML RadioButton twentyOneDays;
+	@FXML RadioButton sevenDays;
+	@FXML ToggleGroup maxdaysbtn;
 
 	
 	@FXML void addBookClick(ActionEvent e) throws InvocationTargetException 
@@ -47,7 +52,9 @@ public class BookSearchController
 			new BookCopy(txtcopyNumber.getText(), txtISBN.getText(), false ).addBookCopy();
 		}
 		else {	
-			b = new Book(txtISBN.getText(), txtTitle.getText(), txtcheckoutmaxvalue.getText(), Integer.parseInt(txtNoofCopies.getText()));		
+			sevenDays.setUserData("7");
+			twentyOneDays.setUserData("21");
+			b = new Book(txtISBN.getText(), txtTitle.getText(), maxdaysbtn.getSelectedToggle().getUserData().toString(), Integer.parseInt(txtNoofCopies.getText()));		
 			b.addBook();
 			lblAddFormStatus.setText("Book Added Successfully");
 		}
@@ -87,8 +94,8 @@ public class BookSearchController
 					txtISBN1.setDisable(true);
 					txtTitle.setText(b.getTitle());
 					txtTitle.setDisable(true);
-					txtcheckoutmaxvalue.setText(b.getCheckoutmaxvalue());
-					txtcheckoutmaxvalue.setDisable(true);
+					//txtcheckoutmaxvalue.setText(b.getCheckoutmaxvalue());
+					//txtcheckoutmaxvalue.setDisable(true);
 					txtNoofCopies.setText(Integer.toString(b.getNoOfCopies()));
 					txtNoofCopies.setDisable(true);
 					
