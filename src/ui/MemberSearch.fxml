@@ -32,7 +32,7 @@
             <Label layoutX="94.0" layoutY="427.0" text="Zip" />
             <Button fx:id="btnRemoveMember" layoutX="191.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnRemoveMemberFormClick" text="Remove" />
             <Label fx:id="lblSearchStatus" layoutX="191.0" layoutY="120.0" />
-            <Button fx:id="btnGoback" layoutX="120.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnGoBackToManageMemberMenuClick" text="Go back" />
+            <Button fx:id="btnGoBack" layoutX="120.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnGoBackToManageMemberMenuClick" text="Go back" />
          </children>
       </Pane>
       <Button fx:id="btnSearchSubmit" layoutX="334.0" layoutY="38.0" mnemonicParsing="false" onAction="#btnMemberSearchClick" text="GO" />

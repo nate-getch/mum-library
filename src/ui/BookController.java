@@ -37,16 +37,23 @@ public class BookController
 	}
 	
 	@FXML void btnMenuAddBookClick(ActionEvent e) {
+		btnGoBack.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/AddBook.fxml", "Add Book");
 	}
 	
 	@FXML void btnMenuEditBookClick(ActionEvent e) {
+		btnGoBack.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/BookSearch.fxml", "Book Search");
 	}
 	
 	@FXML void btnMenuGoBackClick(ActionEvent e) {
 		btnGoBack.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/Dashboard.fxml", "DashBoard", "");
+	}
+	
+	@FXML void btnGoBackToManageBookMenuClick(ActionEvent e) {
+		btnGoBack.getScene().getWindow().hide();
+		new WindowController().openWindow("/ui/ManageBook.fxml", "Manage Book");
 	}
 	
 }

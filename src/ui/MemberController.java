@@ -15,7 +15,7 @@ public class MemberController {
 	@FXML Button btnAddMember;
 	@FXML Button btnAddMemberMenu;
 	@FXML Button btnEditMemberMenu;
-	@FXML Button btnGoback;
+	@FXML Button btnGoBack;
 	@FXML Button btnEditMember;
 	@FXML Button btnRemoveMember;
 	@FXML TextField txtSearchField;
@@ -41,8 +41,8 @@ public class MemberController {
 		new WindowController().openWindow("/ui/MemberSearch.fxml", "Search Member");
 	}
 	
-	@FXML void btnGobackClick(ActionEvent e) {
-		btnGoback.getScene().getWindow().hide();
+	@FXML void btnGoBackClick(ActionEvent e) {
+		btnGoBack.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/Dashboard.fxml", "DashBoard", "");
 	}
 	
@@ -82,7 +82,7 @@ public class MemberController {
 	}
 	
 	@FXML void btnGoBackToManageMemberMenuClick(ActionEvent e) {
-		txtMemberId.getScene().getWindow().hide();
+		btnGoBack.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/ManageMemberMenu.fxml", "Manage Member");
 	}
 	
