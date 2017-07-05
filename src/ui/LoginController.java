@@ -14,13 +14,14 @@ public class LoginController {
 	@FXML void loginBtnClick(ActionEvent e) {
 		User u = new User();
 		u = u.login(userName.getText(), password.getText());
-		if(u.equals(null)) {
+		if(u == null) {
 			loginStatus.setText("Invalid Login info");
 		}
 		else {
-			System.out.println(u);
+			//System.out.println(u);
+			//System.out.println(System.getProperty("user.dir"));
 			userName.getScene().getWindow().hide();
-			new WindowController().openWindow("/ui/Dashboard.fxml", "DashBoard", u);
+			new WindowController().openWindow("/ui/Dashboard.fxml", "DashBoard", u.getRole().toString());
 		}
 			
 	}

@@ -11,7 +11,9 @@ import java.util.*;
 
 public class ioStream {
 	public static String OUTPUT_DIR = System.getProperty("user.dir") + "\\src\\dataaccess\\storage\\";
-
+	public ioStream() {
+		
+	}
 	public <T> Boolean write(List<T> list, String fileName, int flag) {
 		try {
 			// 0 flag removes the previous data written on the file

@@ -1,10 +1,10 @@
 package ui;
 
+import business.LibraryMember;
+import business.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
-import dataaccess.LibraryMember;
 
 public class MemberController {
 	LibraryMember l;
@@ -26,8 +26,9 @@ public class MemberController {
 		
 		l = new LibraryMember(txtMemberId.getText(), txtFirstName.getText(), txtLastName.getText(), txtPhone.getText());
 		l.addLibraryMember();
+		btnAddMember.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/ManageMemberMenu.fxml", "Manage Member");
-		//l.getMemberList();
+		l.getMemberList();
 	}
 	
 	@FXML void btnAddMemberMenuClick(ActionEvent e) {
@@ -41,8 +42,8 @@ public class MemberController {
 	}
 	
 	@FXML void btnGobackClick(ActionEvent e) {
-		btnAddMemberMenu.getScene().getWindow().hide();
-		new WindowController().openWindow("/ui/ManageMemberMenu.fxml", "Manage Member");
+		btnGoback.getScene().getWindow().hide();
+		new WindowController().openWindow("/ui/Dashboard.fxml", "DashBoard", "");
 	}
 	
 	@FXML void btnMemberSearchClick(ActionEvent e) {

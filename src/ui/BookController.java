@@ -1,11 +1,11 @@
 package ui;
 
-import dataaccess.LibraryMember;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import dataaccess.Book;
+import business.Book;
+import business.LibraryMember;
 
 public class BookController 
 {
@@ -13,11 +13,14 @@ public class BookController
 	@FXML TextField txtTitle;
 	@FXML TextField txtcheckoutmaxvalue;
 	@FXML Button btnAddBook;
+	@FXML Button btnGoBack;
+	@FXML Button btnMenuAddBook;
+	@FXML Button btnMenuEditBook;
 	
 	@FXML void addBookClick(ActionEvent e) {		
 		Book b = new Book(txtISBN.getText(), txtTitle.getText(), txtcheckoutmaxvalue.getText());
 		b.addBook();
-		b.getBookList();
+		//b.getBookList();
 	}
 	
 	@FXML void btnBookSearchClick(ActionEvent e) {
@@ -32,4 +35,18 @@ public class BookController
 			//new WindowController().openWindow("/ui/MemberEdit.fxml", "Edit Member");
 		}
 	}
+	
+	@FXML void btnMenuAddBookClick(ActionEvent e) {
+		new WindowController().openWindow("/ui/AddBook.fxml", "Add Book");
+	}
+	
+	@FXML void btnMenuEditBookClick(ActionEvent e) {
+		new WindowController().openWindow("/ui/BookSearch.fxml", "Book Search");
+	}
+	
+	@FXML void btnMenuGoBackClick(ActionEvent e) {
+		btnGoBack.getScene().getWindow().hide();
+		new WindowController().openWindow("/ui/Dashboard.fxml", "DashBoard", "");
+	}
+	
 }

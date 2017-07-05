@@ -13,6 +13,7 @@ public class User  implements Serializable{
 	private String userName;
 	private String password;
 	private UserRole role;
+    public static String urole;
 	
 	public User (){
 		
@@ -22,6 +23,7 @@ public class User  implements Serializable{
 		this.userName = userName;
 		this.password = password;
 		this.role = role;
+		urole = role.toString();
 	}
 	
 	public User login(String userName, String password)  {
@@ -102,4 +104,16 @@ public class User  implements Serializable{
 	public UserRole getRole() {
 		return role;
 	}
+	
+	public String getRole(String userName) {
+		List<User> l =  new ioStream().read("User.txt");
+		
+		for (User u : l) {			
+			if(u.getUserName().trim().equals(userName)){
+				return u.getRole().toString();
+			}
+		}
+		return "";
+	}
+	
 }

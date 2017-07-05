@@ -28,6 +28,7 @@
             <Label layoutX="70.0" layoutY="306.0" text="State" />
             <TextField layoutX="142.0" layoutY="334.0" prefHeight="25.0" prefWidth="149.0" />
             <Label layoutX="74.0" layoutY="338.0" text="Zip" />
+            <Button fx:id="btnGoback" layoutX="172.0" layoutY="372.0" mnemonicParsing="false" onAction="#btnGobackClick" text="Go Back" />
          </children>
       </Pane>
    </children>

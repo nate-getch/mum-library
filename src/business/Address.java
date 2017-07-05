@@ -1,4 +1,4 @@
-package dataaccess;
+package business;
 
 public class Address {
 	private String street;
