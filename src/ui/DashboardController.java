@@ -17,7 +17,7 @@ public class DashboardController{
 	
 	@FXML void addBookBtnClick(ActionEvent e) {
 		btnManageMember.getScene().getWindow().hide();
-		new WindowController().openWindow("/ui/ManageBook.fxml", "Manage Book");
+		new WindowController().openWindow("/ui/BookSearch.fxml", "Manage Book");
 	}
 	
 	@FXML void checkoutBookBtnClick(ActionEvent e) {

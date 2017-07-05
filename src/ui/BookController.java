@@ -18,7 +18,7 @@ public class BookController
 	@FXML Button btnMenuEditBook;
 	
 	@FXML void addBookClick(ActionEvent e) {		
-		Book b = new Book(txtISBN.getText(), txtTitle.getText(), txtcheckoutmaxvalue.getText());
+		Book b = new Book(txtISBN.getText(), txtTitle.getText(), txtcheckoutmaxvalue.getText(),1);
 		b.addBook();
 		//b.getBookList();
 	}

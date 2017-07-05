@@ -16,7 +16,8 @@ public class BookCopy implements Serializable {
 	public BookCopy() {
 	}
 
-	public BookCopy(String UniqueCopynum, String ISBN, boolean isCheckedOut) {
+	public BookCopy(String UniqueCopynum, String ISBN, boolean isCheckedOut) 
+	{
 		this.UniqueCopynum = UniqueCopynum;
 		this.ISBN = ISBN;
 		this.isCheckedOut = isCheckedOut;
@@ -88,13 +89,13 @@ public class BookCopy implements Serializable {
 		return bookList;
 	}
 	
-	/*
+	
 	public static void main(String[] args) {
 		BookCopy b = new BookCopy();
 		//b.generateBookCopy();
 		b.getBookCopyRecordList();
 		//b.removeBookCopy("002");
 		//b.getBookCopyRecordList();
-	}*/
+	}
 
 }
