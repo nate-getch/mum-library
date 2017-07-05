@@ -12,6 +12,10 @@ public class MemberController {
 	@FXML TextField txtFirstName;
 	@FXML TextField txtLastName;
 	@FXML TextField txtPhone;
+	@FXML TextField txtstreet;
+	@FXML TextField txtcity;
+	@FXML TextField txtstate;
+	@FXML TextField txtzip;	
 	@FXML Button btnAddMember;
 	@FXML Button btnAddMemberMenu;
 	@FXML Button btnEditMemberMenu;
@@ -24,11 +28,12 @@ public class MemberController {
 	
 	@FXML void addMemberClick(ActionEvent e) {
 		
-		l = new LibraryMember(txtMemberId.getText(), txtFirstName.getText(), txtLastName.getText(), txtPhone.getText());
+		l = new LibraryMember(txtMemberId.getText(), txtFirstName.getText(), txtLastName.getText(), txtPhone.getText(),
+				              txtstreet.getText(), txtcity.getText(), txtstate.getText(), txtzip.getText());
 		l.addLibraryMember();
 		btnAddMember.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/ManageMemberMenu.fxml", "Manage Member");
-		l.getMemberList();
+	//	l.getMemberList();
 	}
 	
 	@FXML void btnAddMemberMenuClick(ActionEvent e) {
@@ -54,6 +59,10 @@ public class MemberController {
 			txtFirstName.setText("");
 			txtLastName.setText("");
 			txtPhone.setText("");
+			txtstreet.setText("");
+			txtcity.setText("");
+			txtstate.setText("");
+			txtzip.setText("");
 			btnRemoveMember.setDisable(true);
 			btnEditMember.setDisable(true);
 		}
@@ -64,6 +73,10 @@ public class MemberController {
 			txtFirstName.setText(l.getFirstName());
 			txtLastName.setText(l.getLastName());
 			txtPhone.setText(l.getPhone());
+			txtstreet.setText(l.getStreet());
+			txtcity.setText(l.getCity());
+			txtstate.setText(l.getState());
+			txtzip.setText(l.getZip());
 			btnRemoveMember.setDisable(false);
 			btnEditMember.setDisable(false);
 		}
@@ -78,12 +91,18 @@ public class MemberController {
 	
 	@FXML void btnUpdateMemberFormClick(ActionEvent e) {
 		l = new LibraryMember();
-		l.editMember(txtMemberId.getText(), txtFirstName.getText(), txtLastName.getText(), txtPhone.getText());
+		l.editMember(txtMemberId.getText(), txtFirstName.getText(), txtLastName.getText(), txtPhone.getText(), 
+				     txtstreet.getText(), txtcity.getText(), txtstate.getText(), txtzip.getText());
+		lblSearchStatus.setText("Updated");
+		txtMemberId.getScene().getWindow().hide();
+		new WindowController().openWindow("/ui/ManageMemberMenu.fxml", "Manage Member");
+		
 	}
 	
 	@FXML void btnGoBackToManageMemberMenuClick(ActionEvent e) {
 		btnGoBack.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/ManageMemberMenu.fxml", "Manage Member");
+		
 	}
 	
 }

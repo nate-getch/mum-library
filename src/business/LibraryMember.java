@@ -12,16 +12,25 @@ public class LibraryMember implements Serializable {
 	private String firstName;
 	private String lastName;
 	private String phone;
-	
+	private String street;
+	private String city;
+	private String state;
+	private String zip;
+		
 	public LibraryMember() {
 		
 	}
 	
-	public LibraryMember(String txtMemberId,String txtFirstName,String txtLastName, String txtPhone){
+	public LibraryMember(String txtMemberId,String txtFirstName,String txtLastName, String txtPhone,
+			             String street,String city,String state,String zip){
 		this.memberId = txtMemberId;
 		this.firstName = txtFirstName;
 		this.lastName = txtLastName;
 		this.phone = txtPhone;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
 	}
 	
 	public void addLibraryMember(  ) {
@@ -60,9 +69,10 @@ public class LibraryMember implements Serializable {
 		new ioStream().write(list, "LibraryMember.txt", 0); 
 	}
 	
-	public void editMember(String txtMemberId,String txtFirstName,String txtLastName, String txtPhone) {
+	public void editMember(String txtMemberId,String txtFirstName,String txtLastName, String txtPhone,
+			               String street,String city,String state,String zip ) {
 		removeMember(txtMemberId);
-		new LibraryMember(txtMemberId,txtFirstName,txtLastName, txtPhone).addLibraryMember();
+		new LibraryMember(txtMemberId,txtFirstName,txtLastName, txtPhone,street,city,state,zip).addLibraryMember();
 	}
 	
 	public String toString() {
@@ -83,6 +93,20 @@ public class LibraryMember implements Serializable {
 
 	public String getPhone() {
 		return phone;
+	}
+	
+	public String getStreet() {
+		return street;
+	}
+	
+	public String getCity() {
+		return city;
+	}
+	public String getState() {
+		return state;
+	}
+	public String getZip() {
+		return zip;
 	}
 	
 }
