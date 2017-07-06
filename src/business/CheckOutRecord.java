@@ -40,7 +40,7 @@ public class CheckOutRecord implements Serializable {
 		checkOutRecordList.add(c1);
 		new ioStream().write(checkOutRecordList, "CheckOutRecord.txt", 1);
 	}
-
+	/*
 	public List<CheckOutRecord> getCheckoutRecordList() {
 		List<CheckOutRecord> bookList = new ioStream().read("CheckOutRecord.txt");
 		for (CheckOutRecord b : bookList) {
@@ -48,6 +48,34 @@ public class CheckOutRecord implements Serializable {
 		}
 
 		return bookList;
+	}*/
+	
+	public String getUserId() {
+		return UserId;
+	}
+	
+	public List<CheckOutRecord> getCheckoutRecordList(){
+		List<CheckOutRecord> bookList =  new ioStream().read("CheckOutRecord.txt");
+		for (CheckOutRecord b : bookList) 
+		{	if(b.getUserId()=="m01")		
+			bookList.add(b);			
+		}
+		System.out.println(bookList);
+		return bookList;
+	}
+	
+	
+	public String getISBN() {
+		return ISBN;
+	}
+	public String getCopyNumber() {
+		return copyNumber;
+	}
+	public LocalDate getDate() {
+		return date;
+	}
+	public LocalDate getDueDate() {
+		return dueDate;
 	}
 
 	public static void main(String[] args) {

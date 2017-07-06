@@ -31,7 +31,7 @@ public class WindowController {
 
 		}
 	}
-
+	
 	public void openWindow(String uiPage, String title, String role) {
 		try {
 			role = User.urole;
