@@ -149,6 +149,7 @@
     <end type="TARGET" refId="5"/>  
   </generalization>  
   <association id="33">    
+    <bendpoint x="816" y="258"/>    
     <end type="SOURCE" refId="4" navigable="false">      
       <attribute id="34" name="checkutRecord"/>      
       <multiplicity id="35" minimum="0" maximum="1"/>    

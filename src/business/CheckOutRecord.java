@@ -77,10 +77,10 @@ public class CheckOutRecord implements Serializable {
 	public LocalDate getDueDate() {
 		return dueDate;
 	}
-
+	/*
 	public static void main(String[] args) {
 		CheckOutRecord b = new CheckOutRecord();
 		b.getCheckoutRecordList();
-	}
+	}*/
 
 }

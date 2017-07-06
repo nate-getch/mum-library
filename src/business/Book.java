@@ -39,6 +39,7 @@ public class Book implements Serializable {
 		if(getBook(this.ISBN) == null) {
 			new ioStream().write(x, "Book.txt",1);
 			// every book added has at least one copy
+			noOfCopies = (noOfCopies > 1) ? noOfCopies : 1;
 			for (int i=1; i<=noOfCopies; i++) {
 				bookCopy = new BookCopy(Integer.toString(i), this.getISBN(), false);
 				bookCopyList.add(bookCopy);
@@ -90,11 +91,11 @@ public class Book implements Serializable {
 		return "Book ID:" + ISBN + " , Book Title: "+title + " , Book Check Out Value : "+
 				checkoutmaxvalue + " , No Of Copies : "+getNoOfCopies(ISBN);
 	}
-	
+	/*
 	public static void main(String[] args) {
 		Book b = new Book();
 		b.getBookList();
-	}
+	}*/
 
 	public List<Author> getAuthor() {
 		return authors;

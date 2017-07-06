@@ -113,7 +113,7 @@ public class BookCopy implements Serializable {
 		return c;
 	}
 	
-	
+	/*
 	public static void main(String[] args) {
 		BookCopy b = new BookCopy();
 		//b.generateBookCopy();
@@ -121,6 +121,6 @@ public class BookCopy implements Serializable {
 		//b.getNoOfCopies("001");
 		//b.removeBookCopy("002");
 		//b.getBookCopyRecordList();
-	} 
+	} */
 
 }
