@@ -16,6 +16,7 @@ public class LibraryMember implements Serializable {
 	private String city;
 	private String state;
 	private String zip;
+	private CheckOutRecord checkutRecord;
 		
 	public LibraryMember() {
 		

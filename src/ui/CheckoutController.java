@@ -56,6 +56,7 @@ public class CheckoutController {
 				new CheckOutRecord().addCheckOutRecord(txtISBN.getText(), txtMemberId.getText(), bookCopy.getUniqueCopynum(), b.getCheckoutmaxvalue());
 				// update book db file
 				bookCopy.editBookCopy(bookCopy.getUniqueCopynum(), bookCopy.getISBN());
+				lblcheckoutStatus.setText("CheckOut Successful!");
 				new WindowController().openWindow("/ui/checkoutDisplay.fxml", "Checkout Record");
 			}
 		}

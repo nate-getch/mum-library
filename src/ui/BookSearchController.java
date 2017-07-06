@@ -33,6 +33,7 @@ public class BookSearchController
 	@FXML Button btnMenuAddBook;
 	@FXML Button btnMenuEditBook;
 	@FXML Label lblSearchStatus;
+	@FXML Label lblBookCopyStatus;
 	@FXML Alert alert;
 	@FXML TextField txtISBN1;
 	@FXML TextField txtcopyNumber;
@@ -50,6 +51,7 @@ public class BookSearchController
 		Book b;
 		if(isCopy){
 			new BookCopy(txtcopyNumber.getText(), txtISBN.getText(), false ).addBookCopy();
+			lblBookCopyStatus.setText("Book Copy Added Successfully");
 		}
 		else {	
 			sevenDays.setUserData("7");
@@ -96,8 +98,12 @@ public class BookSearchController
 					txtTitle.setDisable(true);
 					//txtcheckoutmaxvalue.setText(b.getCheckoutmaxvalue());
 					//txtcheckoutmaxvalue.setDisable(true);
-					txtNoofCopies.setText(Integer.toString(b.getNoOfCopies()));
+					int noofCopies = b.getNoOfCopies(txtISBN.getText());
+					txtNoofCopies.setText(Integer.toString(noofCopies));
 					txtNoofCopies.setDisable(true);
+					// new copy number should increment by one
+					txtcopyNumber.setText(Integer.toString(noofCopies+1));
+					txtcopyNumber.setDisable(true);
 					
 					alert = new Alert(AlertType.CONFIRMATION);
 					alert.setTitle("Information Dialog");
@@ -117,41 +123,7 @@ public class BookSearchController
 			}			
 		}catch(Exception e1){ e1.printStackTrace(); }
 
-	}
-	
-	/*@FXML void displayBookInfo(Book b)  throws InvocationTargetException 
-	{
-		try
-		{
-		lblSearchStatus.getScene().getWindow().hide();
-		
-		/*FXMLLoader loader = new FXMLLoader(getClass().getResource("AddBook.fxml"));
-        Parent root = loader.load();
-        BookController book = loader.getController();
-        book.txtTitle.setText(b.getTitle());
-        txtTitle.getScene().setRoot(root);
-		FXMLLoader loader = new FXMLLoader();
-		Parent root;
-		Stage dialogue = new Stage();
-		root = (Parent) loader.load(getClass().getResource("/ui/AddBook.fxml").openStream());
-		BookController dc = loader.getController();
-		dc.txtTitle.setText(b.getTitle());
-		//dc.setTextArea("text");
-		dialogue.show();
-		
-		
-		txtISBN.setText(b.getISBN());
-		//BookController b1 = (BookController)FxmlLoader.getController();
-
-		//new WindowController().openWindow("/ui/AddBook.fxml", "Book Information");
-		txtTitle.setText(b.getTitle());
-		System.out.println(txtTitle.getText());
-
-		//new WindowController().openWindow("/ui/AddBookCopy.fxml", "Book Information");
-		new WindowController().openWindow("/ui/AddBook.fxml", "Book Information");
-		}catch(Exception e1){ e1.printStackTrace(); }
-	}*/
-	
+	}	
 	
 	@FXML void btnMenuAddBookClick(ActionEvent e) {
 		btnGoBack.getScene().getWindow().hide();

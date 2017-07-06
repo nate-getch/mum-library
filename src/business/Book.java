@@ -77,9 +77,10 @@ public class Book implements Serializable {
 		return checkoutmaxvalue;
 	}
 	
-	public int getNoOfCopies()
+	public int getNoOfCopies(String ISBN)
 	{
-		return noOfCopies;
+		bookCopy = new BookCopy();
+		return bookCopy.getNoOfCopies(ISBN);
 	}
 	
 	public String toString() {
