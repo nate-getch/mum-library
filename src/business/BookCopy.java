@@ -40,6 +40,12 @@ public class BookCopy implements Serializable {
 		bookCopyList.add(this);
 		new ioStream().write(bookCopyList, "BookCopy.txt", 1);
 	}
+	
+	public void addBookCopyList(List<BookCopy> b) {
+		//List<BookCopy> bookCopyList = new ArrayList<BookCopy>();
+		//bookCopyList.add(b);
+		new ioStream().write(b, "BookCopy.txt", 1);
+	}
 
 
 	public BookCopy getBookCopy(String bookISBN) {
@@ -103,7 +109,7 @@ public class BookCopy implements Serializable {
 			if(bookId.equals(b.ISBN))
 				c++;
 		}
-		System.out.println(c);
+		//System.out.println(c);
 		return c;
 	}
 	

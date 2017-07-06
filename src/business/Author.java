@@ -13,6 +13,7 @@ public class Author extends Person implements Serializable {
 	private String authorFirstName;
 	private String authorLastName;
 	private String authorPhone;
+	private List<Book> books;
 	
 	public Author() {}
 
@@ -43,10 +44,23 @@ public class Author extends Person implements Serializable {
 		return x;
 	}
 	
+	public List<Book> getAuthorBooks(String ISBN){
+		books =  new ioStream().read("Book.txt");
+		List<Book> booklist = new ArrayList<Book>();
+		for (Book b : books) {	
+				if(b.getISBN().equals(ISBN))
+					booklist.add(b);
+					//System.out.println(b.getTitle());
+			}
+		
+		return booklist;
+	}
+	
 	/*
 	public static void main(String[] args) {
 		Author o = new Author();
-		System.out.println(o.getBookAuthors("001"));
+		//System.out.println(o.getBookAuthors("001"));
+		//o.getAuthorBooks("001");
 	} */
 
 }

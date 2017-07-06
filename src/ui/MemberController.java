@@ -5,6 +5,7 @@ import business.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 
 public class MemberController {
 	LibraryMember l;
@@ -25,6 +26,7 @@ public class MemberController {
 	@FXML TextField txtSearchField;
 	@FXML Button btnSearchSubmit;
 	@FXML Label lblSearchStatus;
+	@FXML Pane paneEditMemberInfo;
 	
 	@FXML void addMemberClick(ActionEvent e) {
 		
@@ -65,6 +67,7 @@ public class MemberController {
 			txtzip.setText("");
 			btnRemoveMember.setDisable(true);
 			btnEditMember.setDisable(true);
+			paneEditMemberInfo.setDisable(true);
 		}
 		else {
 			lblSearchStatus.setText("");
@@ -79,6 +82,7 @@ public class MemberController {
 			txtzip.setText(l.getZip());
 			btnRemoveMember.setDisable(false);
 			btnEditMember.setDisable(false);
+			paneEditMemberInfo.setDisable(false);
 		}
 	}
 	

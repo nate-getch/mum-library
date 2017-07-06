@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
@@ -52,6 +53,9 @@ public class BookSearchController
 	@FXML Label lblDisplayAuthors;
 	@FXML Label lblDisplayTitle;
 	@FXML Label lblDisplayNoOfCopies;
+	@FXML Label lblAuthorFormStatus;
+	@FXML Label lblBookCopyFormStatus;
+	@FXML TabPane bookInfoTab;
 	
 	@FXML void addBookClick(ActionEvent e) throws InvocationTargetException 
 	{	
@@ -60,7 +64,7 @@ public class BookSearchController
 		Book b;
 		if(isCopy){
 			new BookCopy(txtcopyNumber.getText(), txtISBN.getText(), false ).addBookCopy();
-			lblBookCopyStatus.setText("Book Copy Added Successfully");
+			lblBookCopyFormStatus.setText("Copy Added Successfully");
 		}
 		else {	
 			sevenDays.setUserData("7");
@@ -87,6 +91,7 @@ public class BookSearchController
 				Book b = new Book().getBook(txtISBN.getText());
 				if(b == null) 
 				{
+					bookInfoTab.setDisable(true);
 					alert = new Alert(AlertType.CONFIRMATION);
 					alert.setTitle("Information Dialog");
 					alert.setHeaderText("Book Not Found in the Library !");
@@ -101,6 +106,7 @@ public class BookSearchController
 				}
 				else
 				{
+					bookInfoTab.setDisable(false);
 					//txtISBN1.setText(b.getISBN());
 					//txtISBN1.setDisable(true);
 					//txtTitle.setText(b.getTitle());
@@ -163,9 +169,8 @@ public class BookSearchController
 		}
 		else {
 			new Author(authorFirstName.getText(), authorLastName.getText(), authorPhone.getText(), authorCredential.getText(),txtISBN.getText()  ).addAuthor();
-		
+			lblBookCopyFormStatus.setText("Author Added Successful.");
 		}
 	}
-	;
 	
 }

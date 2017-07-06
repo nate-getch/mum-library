@@ -22,7 +22,7 @@
       <TextField fx:id="txtNoofCopies" layoutX="203.0" layoutY="186.0" />
       <Label layoutX="98.0" layoutY="190.0" text="Number Of Copies" />
       <Button fx:id="btnAddBook" layoutX="250.0" layoutY="245.0" mnemonicParsing="false" onAction="#addBookClick" text="Submit" />
-      <Button fx:id="btnGoBack" layoutX="177.0" layoutY="245.0" mnemonicParsing="false" onAction="#btnMenuGoBackClick" text="Go Back" />
+      <Button fx:id="btnGoBack" layoutX="177.0" layoutY="245.0" mnemonicParsing="false" onAction="#btnMenuEditBookClick" text="Go Back" />
       <Label fx:id="lblAddFormStatus" layoutX="175.0" layoutY="325.0" />
       <RadioButton fx:id="sevenDays" layoutX="208.0" layoutY="153.0" mnemonicParsing="false" text="7 Days">
          <toggleGroup>

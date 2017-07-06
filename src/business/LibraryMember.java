@@ -6,7 +6,7 @@ import java.util.List;
 
 import dataaccess.ioStream;
 
-public class LibraryMember implements Serializable {
+public class LibraryMember extends Person implements Serializable {
 	private static final long serialVersionUID = 8309080721495266420L;
 	private String memberId;
 	private String firstName;
@@ -24,6 +24,7 @@ public class LibraryMember implements Serializable {
 	
 	public LibraryMember(String txtMemberId,String txtFirstName,String txtLastName, String txtPhone,
 			             String street,String city,String state,String zip){
+		super(txtFirstName, txtLastName, txtPhone);
 		this.memberId = txtMemberId;
 		this.firstName = txtFirstName;
 		this.lastName = txtLastName;
