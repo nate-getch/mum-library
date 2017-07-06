@@ -18,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import business.Author;
 import business.Book;
 import business.BookCopy;
 import business.LibraryMember;
@@ -42,7 +43,15 @@ public class BookSearchController
 	@FXML RadioButton twentyOneDays;
 	@FXML RadioButton sevenDays;
 	@FXML ToggleGroup maxdaysbtn;
-
+	private String ISBN;
+	@FXML TextField authorCredential;
+	@FXML TextField authorFirstName;
+	@FXML TextField authorLastName;
+	@FXML TextField authorPhone;
+	@FXML Button btnAddAuthor;
+	@FXML Label lblDisplayAuthors;
+	@FXML Label lblDisplayTitle;
+	@FXML Label lblDisplayNoOfCopies;
 	
 	@FXML void addBookClick(ActionEvent e) throws InvocationTargetException 
 	{	
@@ -92,31 +101,35 @@ public class BookSearchController
 				}
 				else
 				{
-					txtISBN1.setText(b.getISBN());
-					txtISBN1.setDisable(true);
-					txtTitle.setText(b.getTitle());
-					txtTitle.setDisable(true);
+					//txtISBN1.setText(b.getISBN());
+					//txtISBN1.setDisable(true);
+					//txtTitle.setText(b.getTitle());
+					//txtTitle.setDisable(true);
 					//txtcheckoutmaxvalue.setText(b.getCheckoutmaxvalue());
 					//txtcheckoutmaxvalue.setDisable(true);
 					int noofCopies = b.getNoOfCopies(txtISBN.getText());
-					txtNoofCopies.setText(Integer.toString(noofCopies));
-					txtNoofCopies.setDisable(true);
+					//txtNoofCopies.setText(Integer.toString(noofCopies));
+					//txtNoofCopies.setDisable(true);
 					// new copy number should increment by one
 					txtcopyNumber.setText(Integer.toString(noofCopies+1));
 					txtcopyNumber.setDisable(true);
 					
-					alert = new Alert(AlertType.CONFIRMATION);
-					alert.setTitle("Information Dialog");
-					alert.setHeaderText("Book with this ISBN found in the Library");
-					alert.setContentText("Do you want to add a copy of this book ?");
+					//alert = new Alert(AlertType.CONFIRMATION);
+					//alert.setTitle("Information Dialog");
+					//alert.setHeaderText("Book with this ISBN found in the Library");
+					//alert.setContentText("Do you want to add a copy of this book ?");
 
-					Optional<ButtonType> result = alert.showAndWait();
-					if (result.get() == ButtonType.OK)
-					{						
+					//Optional<ButtonType> result = alert.showAndWait();
+					//if (result.get() == ButtonType.OK)
+					//{						
 						isCopy = true;						
 						//lblSearchStatus.getScene().getWindow().hide();
 						//new WindowController().openWindow("/ui/AddBookCopy.fxml", "Add Book Copy");					    
-					}				
+					//}
+					lblDisplayTitle.setText("Title: "+b.getTitle());
+					lblDisplayNoOfCopies.setText("No Of Copies: "+Integer.toString(noofCopies));
+					String authorList = new Author().getBookAuthors(txtISBN.getText());
+					lblDisplayAuthors.setText(authorList);
 				}
 				//txtISBN.getScene().getWindow().hide();
 				//new WindowController().openWindow("/ui/MemberEdit.fxml", "Edit Member");
@@ -141,5 +154,18 @@ public class BookSearchController
 		btnGoBack.getScene().getWindow().hide();
 		new WindowController().openWindow("/ui/Dashboard.fxml", "DashBoard", "");
 	}
+	
+	@FXML void btnAddAuthorClick(ActionEvent e) {
+		if(txtISBN.getText().isEmpty())
+		{
+			lblSearchStatus.setTextFill(Color.RED);
+			lblSearchStatus.setText("Please enter an ISBN");
+		}
+		else {
+			new Author(authorFirstName.getText(), authorLastName.getText(), authorPhone.getText(), authorCredential.getText(),txtISBN.getText()  ).addAuthor();
+		
+		}
+	}
+	;
 	
 }

@@ -3,19 +3,37 @@ package business;
 public class Person {
 	private String fname;
 	private String lname;
-	private String contact;
+	private String phone;
 	private String street;
 	private String city;
 	private String state;
 	private String zip;
 
-	Person(String fname, String lname, String contact, String street, String city, String state, String zip) {
+	public Person() {
+		
+	}
+	
+	public Person(String fname, String lname, String phone) {
 		this.fname = fname;
 		this.lname = lname;
-		this.contact = contact;
-		this.street = street;
-		this.city = city;
-		this.state = state;
-		this.zip = zip;
+		this.phone = phone;
+		
 	}
+
+	public String getFname() {
+		return fname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+	
+	public String toString() {
+		return "First Name: "+ fname + " , Last Name: " + lname;
+	}
+	
 }

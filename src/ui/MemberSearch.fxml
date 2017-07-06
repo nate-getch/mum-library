@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="529.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MemberController">
+<AnchorPane prefHeight="529.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MemberController">
    <children>
-      <Pane layoutX="-33.0" layoutY="-50.0" prefHeight="574.0" prefWidth="659.0">
+      <Pane layoutX="-23.0" layoutY="-45.0" prefHeight="574.0" prefWidth="659.0">
          <children>
-            <TextField fx:id="txtSearchField" layoutX="195.0" layoutY="85.0" />
-            <Label layoutX="70.0" layoutY="89.0" text="Search Member ID" />
-            <Label layoutX="92.0" layoutY="137.0" text="Edit Member" />
-            <Button fx:id="btnEditMember" layoutX="257.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnUpdateMemberFormClick" text="Update" />
-            <TextField fx:id="txtMemberId" layoutX="162.0" layoutY="169.0" />
-            <Label layoutX="92.0" layoutY="173.0" text="ID" />
-            <TextField fx:id="txtFirstName" layoutX="162.0" layoutY="201.0" />
-            <Label layoutX="92.0" layoutY="205.0" text="First Name" />
-            <TextField fx:id="txtLastName" layoutX="162.0" layoutY="238.0" />
-            <Label layoutX="92.0" layoutY="242.0" text="Last Name" />
-            <TextField fx:id="txtPhone" layoutX="162.0" layoutY="277.0" />
-            <Label layoutX="92.0" layoutY="281.0" text="Phone" />
-            <TextField fx:id="txtstreet" layoutX="162.0" layoutY="315.0" prefHeight="25.0" prefWidth="149.0" />
-            <Label layoutX="90.0" layoutY="319.0" text="Street" />
-            <TextField fx:id="txtcity" layoutX="162.0" layoutY="353.0" />
-            <Label layoutX="92.0" layoutY="357.0" text="City" />
-            <TextField fx:id="txtstate" layoutX="162.0" layoutY="391.0" prefHeight="25.0" prefWidth="149.0" />
-            <Label layoutX="90.0" layoutY="395.0" text="State" />
-            <TextField fx:id="txtzip" layoutX="162.0" layoutY="423.0" prefHeight="25.0" prefWidth="149.0" />
-            <Label layoutX="94.0" layoutY="427.0" text="Zip" />
-            <Button fx:id="btnRemoveMember" layoutX="191.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnRemoveMemberFormClick" text="Remove" />
-            <Label fx:id="lblSearchStatus" layoutX="191.0" layoutY="120.0" />
-            <Button fx:id="btnGoBack" layoutX="120.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnGoBackToManageMemberMenuClick" text="Go back" />
+            <TextField fx:id="txtSearchField" layoutX="77.0" layoutY="165.0" />
+            <Label layoutX="77.0" layoutY="143.0" text="Search Member ID" />
+            <Label layoutX="357.0" layoutY="137.0" text="Edit Membe Infor" />
+            <Button fx:id="btnEditMember" layoutX="522.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnUpdateMemberFormClick" text="Update" />
+            <TextField fx:id="txtMemberId" layoutX="427.0" layoutY="169.0" />
+            <Label layoutX="357.0" layoutY="173.0" text="ID" />
+            <TextField fx:id="txtFirstName" layoutX="427.0" layoutY="201.0" />
+            <Label layoutX="357.0" layoutY="205.0" text="First Name" />
+            <TextField fx:id="txtLastName" layoutX="427.0" layoutY="238.0" />
+            <Label layoutX="357.0" layoutY="242.0" text="Last Name" />
+            <TextField fx:id="txtPhone" layoutX="427.0" layoutY="277.0" />
+            <Label layoutX="357.0" layoutY="281.0" text="Phone" />
+            <TextField fx:id="txtstreet" layoutX="427.0" layoutY="315.0" prefHeight="25.0" prefWidth="149.0" />
+            <Label layoutX="355.0" layoutY="319.0" text="Street" />
+            <TextField fx:id="txtcity" layoutX="427.0" layoutY="353.0" />
+            <Label layoutX="357.0" layoutY="357.0" text="City" />
+            <TextField fx:id="txtstate" layoutX="427.0" layoutY="391.0" prefHeight="25.0" prefWidth="149.0" />
+            <Label layoutX="355.0" layoutY="395.0" text="State" />
+            <TextField fx:id="txtzip" layoutX="427.0" layoutY="423.0" prefHeight="25.0" prefWidth="149.0" />
+            <Label layoutX="359.0" layoutY="427.0" text="Zip" />
+            <Button fx:id="btnRemoveMember" layoutX="456.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnRemoveMemberFormClick" text="Remove" />
+            <Label fx:id="lblSearchStatus" layoutX="77.0" layoutY="200.0" prefHeight="17.0" prefWidth="149.0" />
+            <Button fx:id="btnGoBack" layoutX="385.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnGoBackToManageMemberMenuClick" text="Go back" />
+            <Label layoutX="77.0" layoutY="81.0" text="Manage Library Member">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnSearchSubmit" layoutX="237.0" layoutY="165.0" mnemonicParsing="false" onAction="#btnMemberSearchClick" text="GO" />
          </children>
       </Pane>
-      <Button fx:id="btnSearchSubmit" layoutX="334.0" layoutY="38.0" mnemonicParsing="false" onAction="#btnMemberSearchClick" text="GO" />
    </children>
 </AnchorPane>

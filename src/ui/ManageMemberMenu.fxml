@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MemberController">
    <children>
@@ -11,6 +13,11 @@
             <Button fx:id="btnAddMemberMenu" layoutX="165.0" layoutY="121.0" mnemonicParsing="false" onAction="#btnAddMemberMenuClick" prefHeight="25.0" prefWidth="59.0" text="Add" />
             <Button fx:id="btnEditMemberMenu" layoutX="165.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnEditMemberMenuClick" prefHeight="25.0" prefWidth="59.0" text="Edit" />
             <Button fx:id="btnGoBack" layoutX="165.0" layoutY="196.0" mnemonicParsing="false" onAction="#btnGoBackClick" text="Go Back" />
+            <Label layoutX="103.0" layoutY="65.0" text="Manage Library Member">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

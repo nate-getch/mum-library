@@ -3,18 +3,22 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="579.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.CheckoutController">
+<AnchorPane prefHeight="260.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.CheckoutController">
    <children>
-      <Button fx:id="btncheckout" layoutX="282.0" layoutY="243.0" mnemonicParsing="false" onAction="#checkoutBtnClick" prefHeight="25.0" prefWidth="124.0" text="Checkout" />
-      <Label layoutX="61.0" layoutY="160.0" prefHeight="25.0" prefWidth="105.0" text="Member ID" />
-      <Label layoutX="61.0" layoutY="185.0" prefHeight="25.0" prefWidth="118.0" text="ISBN" />
-      <TextField fx:id="txtISBN" layoutX="191.0" layoutY="190.0" prefHeight="25.0" prefWidth="215.0" />
-      <TextField fx:id="txtMemberId" layoutX="191.0" layoutY="160.0" prefHeight="25.0" prefWidth="215.0" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="lblcheckoutStatus" layoutX="82.0" layoutY="299.0" prefHeight="42.0" prefWidth="364.0" />
-      <Button fx:id="btnGoBack" layoutX="200.0" layoutY="243.0" mnemonicParsing="false" onAction="#btnMenuGoBackClick" prefHeight="25.0" prefWidth="68.0" text="Go Back" />
+      <Button fx:id="btncheckout" layoutX="290.0" layoutY="179.0" mnemonicParsing="false" onAction="#checkoutBtnClick" prefHeight="25.0" prefWidth="124.0" text="Checkout" />
+      <Label layoutX="69.0" layoutY="96.0" prefHeight="25.0" prefWidth="105.0" text="Member ID" />
+      <Label layoutX="69.0" layoutY="121.0" prefHeight="25.0" prefWidth="118.0" text="ISBN" />
+      <TextField fx:id="txtISBN" layoutX="199.0" layoutY="126.0" prefHeight="25.0" prefWidth="215.0" />
+      <TextField fx:id="txtMemberId" layoutX="199.0" layoutY="96.0" prefHeight="25.0" prefWidth="215.0" />
+      <Label fx:id="lblcheckoutStatus" layoutX="94.0" layoutY="216.0" prefHeight="42.0" prefWidth="364.0" />
+      <Button fx:id="btnGoBack" layoutX="208.0" layoutY="179.0" mnemonicParsing="false" onAction="#btnMenuGoBackClick" prefHeight="25.0" prefWidth="68.0" text="Go Back" />
+      <Label layoutX="69.0" layoutY="49.0" text="Checkout Book">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

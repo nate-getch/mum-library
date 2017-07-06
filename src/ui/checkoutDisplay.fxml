@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.DisplayController">
+<GridPane prefHeight="298.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.DisplayController">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -18,7 +15,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <TableView fx:id="checkout" prefHeight="279.0" prefWidth="433.0" GridPane.columnIndex="1">
+      <TableView fx:id="checkout" prefHeight="298.0" prefWidth="455.0" GridPane.columnIndex="1">
         <columns>
           <TableColumn fx:id="UserId" prefWidth="89.0" text="MemberID" />
           <TableColumn fx:id="ISBN" prefWidth="75.0" text="ISBN" />

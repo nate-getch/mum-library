@@ -8,7 +8,7 @@ import business.User;;
 public class DashboardController{
 	@FXML Button btnCheckoutBook;
 	@FXML Button btnManageMember;
-	@FXML Button btnAddBook;	
+	@FXML Button btnAddBook;
 	
 	@FXML void manageMemberBtnClick(ActionEvent e) {
 		btnManageMember.getScene().getWindow().hide();

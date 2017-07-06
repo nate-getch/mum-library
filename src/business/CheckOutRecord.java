@@ -56,11 +56,11 @@ public class CheckOutRecord implements Serializable {
 	
 	public List<CheckOutRecord> getCheckoutRecordList(){
 		List<CheckOutRecord> bookList =  new ioStream().read("CheckOutRecord.txt");
-		for (CheckOutRecord b : bookList) 
+		/*for (CheckOutRecord b : bookList) 
 		{	if(b.getUserId()=="m01")		
 			bookList.add(b);			
-		}
-		System.out.println(bookList);
+		}*/
+		//System.out.println(bookList);
 		return bookList;
 	}
 	
